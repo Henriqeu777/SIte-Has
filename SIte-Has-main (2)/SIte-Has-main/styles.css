@@ -1,26 +1,21 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
 body {
     background-color: #A7DFFF;
     color: #333;
     align-items: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 header {
     background-color: #A7DFFF;
     color: black;
-    padding: 20px;
-    place-items: center;
     text-align: center;
-
 }
 .introdução{
     text-align: center;
+    color: black;
 }
+
 
 .wallpaper {
     max-width: 100%;
@@ -32,87 +27,32 @@ header {
 .forum{
     place-items: center;
 }
-nav {
-    background-color: #A7DFFF;
-    padding: 15px;
+nav{
+    background-color: #3081D0;
+    position: sticky;
+    top: 0;
+    padding: 5px;
+    text-align: center;
+    z-index: 1000; /* Mantém o menu acima dos outros elementos */
+    border-radius: 5px;
 }
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
-
-nav ul li {
-    margin: 0 15px;
-}
-
 nav ul li a {
     text-decoration: none;
     color: white;
     font-size: 1.2em;
     transition: color 0.3s;
+    font-weight: bold
 }
 
 nav ul li a:hover {
+    cursor: pointer;
     color: #f4a460;
 }
-/*organozação dos botões do home*/
-/* Contêiner que organiza os botões lado a lado */
-.destaques {
-    display: flex;              /* Disposição em linha */
-    justify-content: center;    /* Centraliza os itens horizontalmente */
-    align-items: center;        /* Alinha os itens verticalmente */
-    gap: 20px;                  /* Espaço entre os botões */
-    /*padding: 20px;               Espaçamento interno opcional */
-  }
-  
-  /* Estilização dos "botões" */
-  .destaques nav.titulos {
-    width: 400px;            /* Largura fixa */
-    height: 500px;           /* Altura fixa */
-    display: flex;
-    flex-direction: column;     /* Organiza o conteúdo em coluna (imagem e texto) */
-    align-items: center;        /* Centraliza os elementos dentro do botão */
-    justify-content: center;
-    /*padding: 10px 20px;          Espaçamento interno */
-    border: none;   /*Borda com cor de destaque */
-    /*border-radius: 5px;          Bordas arredondadas */
-    background-color:#A7DFFF;
-    /* background-color: #f0f0f0;  Fundo claro */
-    cursor: pointer;            /* Indica que é clicável */
-    transition: background-color 0.3s, transform 0.3s; /* Suaviza efeitos de hover */
-  }
-  
-  /* Efeito ao passar o mouse */
-  .destaques nav.titulos:hover {
-    text-decoration: underline;
-    background-color: #A7DFFF;
-    /*transform: scale(1.02);   Leve aumento para destacar */
-  }
-  
-  /* Estilização da imagem para se adaptar ao botão */
-  .destaques nav.titulos img {
-    max-width: 100%;        /* Garante que a imagem não ultrapasse a largura do botão */
-    height: auto;
-    margin-bottom: 10px;    /* Espaço entre imagem e texto */
-    width: 400px;              /* Largura fixa */
-    height: 200px;             /* Altura fixa */
-     /*object-fit: cover;        Ajusta a imagem preenchendo o espaço sem distorção */
-    margin-right: 10px;       /* Espaço entre a imagem e o texto, se necessário */
-  }
-  
-  /* Removendo margens padrão do parágrafo */
-  .destaques nav.titulos p {
-    margin: 0;
-  }
-  
-  /* Estilização do link */
-  .destaques nav.titulos a.texto {
-    text-decoration: none;  /* Remove sublinhado */
-    color: #333;            /* Cor do texto */
-    font-size: 25px;        /* Tamanho da fonte */
-    text-align: center;     /* Centraliza o texto */
-    }
 
 .img-button-biblioteca {
     width: 150px;
@@ -147,14 +87,7 @@ button{
 .link-name{
     color:black
 }
-.menu-navegar{
-    background-color: #00264d;
-    position: sticky;
-    top: 0;
-    padding: 15px;
-    text-align: center;
-    z-index: 1000; /* Mantém o menu acima dos outros elementos */
-}
+
 .contatos{
     gap: 20px;
     text-align: center;
@@ -178,7 +111,6 @@ button{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: center;
-    padding: 20px;
     transition: transform 0.3s ease;
 }
 
@@ -190,5 +122,54 @@ button{
     width: 100%;
     height: 150px;
     object-fit: cover;
-    border-radius: 8px;
+    }
+
+
+
+/* Estiliza a área dos destaques */
+.destaques {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* Espaçamento entre os blocos */
+    text-decoration: none;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    
 }
+
+/* Estilos para cada "botão" */
+.titulos {
+    display: flex;
+    background-color: #A7DFFF; /* Cor de fundo do botão */
+    border-radius: 8px; /* Bordas arredondadas */
+    flex-direction: column;
+    gap: 15px;
+    text-decoration: none;
+    width: 400px;
+    font-size: 2rem;
+}
+
+/* Configuração do link para ocupar o bloco todo */
+.botao-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinha imagem e texto verticalmente */
+    text-decoration: none; /* Remove sublinhado */
+    color: #333; /* Cor do texto */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Efeito ao passar o mouse */
+.titulos:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Estiliza a imagem */
+.botao-link img {
+    width: 100%; /* Ajuste conforme necessário */
+    height: auto;
+    margin-right: 10px; /* Espaço entre imagem e texto */
+}
+
